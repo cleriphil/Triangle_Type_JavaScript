@@ -8,6 +8,8 @@ var triangleType = function(side1, side2, side3) {
   var sortedSides = sides.sort(numOrdA);
   if (sortedSides[2] > sortedSides[0] + sortedSides[1]) {
     return false;
+  } else {
+    return "equilateral"
   };
 };
 
