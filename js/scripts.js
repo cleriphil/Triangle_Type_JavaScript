@@ -18,13 +18,24 @@ var triangleType = function(side1, side2, side3) {
 };
 
 
+$(document).ready(function() {
+  $("form#triangle").submit(function(event) {
+    var side1 = parseInt($("input#side1").val());
+    var side2 = parseInt($("input#side2").val());
+    var side3 = parseInt($("input#side3").val());
+    var result = triangleType(side1, side2, side3)
+    $(".type").show()
+    if (result === "equilateral") {
+      $(".type").text("equilateral");
+    } else if (result === "scalene") {
+      $(".type").text("scalene");
+    } else if (result === 'isosceles') {
+      $(".type").text("isosceles");
+    } else {
+      $(".type").hide()
+      alert("Not a Triangle. Try again");
+    };
+    event.preventDefault();
 
-
-
-
-
-
-//
-// $(document).ready(function() {
-//
-// });
+  });
+});
